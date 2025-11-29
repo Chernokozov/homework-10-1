@@ -1,7 +1,8 @@
 """Основной модуль для демонстрации работы виджета."""
 
-from .widget import mask_account_card, get_date
-from .processing import filter_by_state, sort_by_date
+from src.processing import filter_by_state, sort_by_date
+from src.widget import get_date, mask_account_card
+
 
 def main() -> None:
     """Демонстрация работы всех функций виджета."""

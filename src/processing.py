@@ -1,10 +1,12 @@
 """Модуль для обработки банковских операций."""
 
 from datetime import datetime
-from typing import List, Dict, Any
+from typing import Any, Dict, List
 
 
-def filter_by_state(operations: List[Dict[str, Any]], state: str = "EXECUTED") -> List[Dict[str, Any]]:
+def filter_by_state(
+    operations: List[Dict[str, Any]], state: str = "EXECUTED"
+) -> List[Dict[str, Any]]:
     """
     Фильтрует операции по статусу выполнения.
 
@@ -18,7 +20,9 @@ def filter_by_state(operations: List[Dict[str, Any]], state: str = "EXECUTED") -
     return [op for op in operations if op.get("state") == state]
 
 
-def sort_by_date(operations: List[Dict[str, Any]], descending: bool = True) -> List[Dict[str, Any]]:
+def sort_by_date(
+    operations: List[Dict[str, Any]], descending: bool = True
+) -> List[Dict[str, Any]]:
     """
     Сортирует операции по дате.
 
@@ -29,6 +33,7 @@ def sort_by_date(operations: List[Dict[str, Any]], descending: bool = True) -> L
     Returns:
         Отсортированный список операций
     """
+
     def get_date_key(operation: Dict[str, Any]) -> datetime:
         date_str = operation.get("date", "")
         return datetime.fromisoformat(date_str) if date_str else datetime.min

@@ -1,6 +1,7 @@
 """Модуль виджета для обработки банковских операций."""
 
 from datetime import datetime
+
 from . import masks
 
 
